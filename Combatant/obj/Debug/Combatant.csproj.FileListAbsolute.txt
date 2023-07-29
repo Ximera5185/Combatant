@@ -1,0 +1,8 @@
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\bin\Debug\Combatant.exe.config
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\bin\Debug\Combatant.exe
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\bin\Debug\Combatant.pdb
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\obj\Debug\Combatant.csproj.AssemblyReference.cache
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\obj\Debug\Combatant.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\obj\Debug\Combatant.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\obj\Debug\Combatant.exe
+C:\Users\Dmitry\Source\Repos\Combatant\Combatant\obj\Debug\Combatant.pdb
