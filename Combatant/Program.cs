@@ -10,7 +10,30 @@ namespace Combatant
     {
         static void Main(string [] args)
         {
-            Console.WriteLine("Привет");
+            int inputOneNumber;
+            int inputTwoNumber;
+
+            levelGenerator levelGenerator = new levelGenerator();
+
+            Console.WriteLine("Выберите 1-го бойца");
+
+            levelGenerator.ShowFighters();
+
+            Console.WriteLine("Введите номер первого бойца");
+            
+            inputOneNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+
+            Console.WriteLine("Выберите 2-го бойца");
+
+            levelGenerator.ShowFighters();
+
+            Console.WriteLine("Введите номер второго бойца");
+
+            inputTwoNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.ReadKey();
         }
     }
 }
