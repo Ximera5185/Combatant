@@ -25,11 +25,11 @@ namespace Combatant
 
         private void AddFightersList() 
         {
-            _listOfFighters.Add(1, "Самурай // Супер сила : ");
-            _listOfFighters.Add(2, "Военный // Супер сила : ");
+            _listOfFighters.Add(1, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
+            _listOfFighters.Add(2, "Змей-Горыныч // Супер сила : ");
             _listOfFighters.Add(3, "Леший // Супер сила : ");
             _listOfFighters.Add(4, "Баба-Яга // Супер сила : ");
-            _listOfFighters.Add(5, "Колобок // Супер сила : ");
+            _listOfFighters.Add(5, "Водяной // Супер сила : ");
         }
     }
 }

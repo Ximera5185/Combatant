@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BabaYaga.cs" />
+    <Compile Include="Dragon.cs" />
     <Compile Include="Fighter.cs" />
+    <Compile Include="Goblin.cs" />
+    <Compile Include="Kashchei.cs" />
     <Compile Include="levelGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaterMan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
