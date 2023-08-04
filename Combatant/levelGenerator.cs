@@ -42,9 +42,44 @@ namespace Combatant
             {
                 switch (inputUserCommand)
                 {
-                    
+                    case 1: 
                 }
             }
+        }
+
+        private Kashchei CreateKashchei(Kashchei kashchei) 
+        {
+            kashchei = new Kashchei;
+
+            return kashchei;
+        }
+
+        private Dragon CreateDragon(Dragon dragon)
+        { 
+            dragon = new Dragon();
+
+            return dragon;
+        }
+
+        private Goblin CreateGoblin(Goblin goblin) 
+        {
+            goblin = new Goblin();
+
+            return goblin;
+        }
+
+        private BabaYaga CreateBabaYaga(BabaYaga babaYaga) 
+        {
+            babaYaga = new BabaYaga();
+
+            return babaYaga;
+        }
+
+        private WaterMan CreateWaterMan(WaterMan waterMan) 
+        {
+            waterMan = new WaterMan;
+
+            return waterMan;
         }
     }
 }
