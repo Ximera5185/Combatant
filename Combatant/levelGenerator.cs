@@ -31,5 +31,20 @@ namespace Combatant
             _listOfFighters.Add(4, "Баба-Яга // Супер сила : ");
             _listOfFighters.Add(5, "Водяной // Супер сила : ");
         }
+
+        private void StartMenu() 
+        {
+            bool isProgramWork = true;
+
+            string inputUserCommand = "";
+
+            while (isProgramWork)
+            {
+                switch (inputUserCommand)
+                {
+                    
+                }
+            }
+        }
     }
 }
