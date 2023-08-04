@@ -42,14 +42,14 @@ namespace Combatant
             {
                 switch (inputUserCommand)
                 {
-                    case 1: 
+                    
                 }
             }
         }
 
         private Kashchei CreateKashchei(Kashchei kashchei) 
         {
-            kashchei = new Kashchei;
+            kashchei = new Kashchei();
 
             return kashchei;
         }
@@ -77,7 +77,7 @@ namespace Combatant
 
         private WaterMan CreateWaterMan(WaterMan waterMan) 
         {
-            waterMan = new WaterMan;
+            waterMan = new WaterMan();
 
             return waterMan;
         }
