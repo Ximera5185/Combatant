@@ -8,24 +8,26 @@ namespace Combatant
 {
     internal class Arena
     {
-       readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
+        readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
-        
+        Fighter fighter1;
+        Fighter fighter2;
 
-        public Arena() 
+        public Arena()
         {
             AddFightersList();
+
         }
 
-        public void ShowFighters() 
+        public void ShowFighters()
         {
-            foreach (KeyValuePair<int,string> fighter in _listOfFighters)
+            foreach (KeyValuePair<int, string> fighter in _listOfFighters)
             {
                 Console.WriteLine($"{fighter.Key} {fighter.Value}");
             }
         }
 
-        private void AddFightersList() 
+        private void AddFightersList()
         {
             _listOfFighters.Add(1, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
             _listOfFighters.Add(2, "Змей-Горыныч // Супер сила : ");
@@ -34,70 +36,100 @@ namespace Combatant
             _listOfFighters.Add(5, "Водяной // Супер сила : ");
         }
 
-        public void StartMenu() 
+        public void StartArena()
+        {
+            ChoiceOfTheFirstFighter();
+            ChoiceOfTheSecondFighter();
+        }
+
+        private void ChoiceOfTheFirstFighter() 
         {
             bool isProgramWork = true;
 
-            string inputUserCommand = "";
+            int inputUserCommand;
 
             while (isProgramWork)
             {
-                const string CaseCreateKashchei = "1";
-                const string CaseCreateDragon = "2";
-                const string CaseCreateGoblin = "3";
-                const string CaseCreateBabaYaga = "4";
-                const string CaseCreateWaterMan = "5";
 
-                Kashchei kashchei = null;
-                Dragon dragon = null;
-                Goblin goblin = null;
-                BabaYaga babaYaga = null;
-                WaterMan waterMan = null; 
+                Console.WriteLine($"Выберите 1-го бойца из списка");
 
-                Console.WriteLine($"Выберите  бойца из списка");
                 ShowFighters();
-                
-                inputUserCommand = Console.ReadLine();
 
-                switch (inputUserCommand)
+                inputUserCommand = Convert.ToInt32(Console.ReadLine());
+
+                if (_listOfFighters.ContainsKey(inputUserCommand))
                 {
-                    case CaseCreateKashchei: CreateKashchei(kashchei);
-                        break;
-                    case CaseCreateDragon: CreateDragon(dragon);
-                        break;
-                    case CaseCreateGoblin: CreateGoblin(goblin);
-                        break;
-                    case CaseCreateBabaYaga: CreateBabaYaga(babaYaga);
-                        break;
-                    case CaseCreateWaterMan: CreateWaterMan(waterMan);
-                        break;
+                    switch (inputUserCommand)
+                    {
+                        case 1:
+                            fighter1 = new Kashchei();
+                            break;
+                        case 2:
+                            fighter1 = new Dragon();
+                            break;
+                        case 3:
+                            fighter1 = new Goblin();
+                            break;
+                        case 4:
+                            fighter1 = new BabaYaga();
+                            break;
+                        case 5:
+                            fighter1 = new WaterMan();
+                            break;
+                    }
+
+                    isProgramWork = false;
+                }
+                else
+                {
+                    Console.WriteLine("Бойца под таким номером нет в списке");
                 }
             }
         }
 
-        private void CreateKashchei(Kashchei kashchei) 
+        private void ChoiceOfTheSecondFighter() 
         {
-            kashchei = new Kashchei();
-        }
+            bool isProgramWork = true;
 
-        private void CreateDragon(Dragon dragon)
-        { 
-            dragon = new Dragon();
-        }
+            int inputUserCommand;
 
-        private void CreateGoblin(Goblin goblin) 
-        {
-            goblin = new Goblin();
-        }
+            while (isProgramWork)
+            {
 
-        private void CreateBabaYaga(BabaYaga babaYaga) 
-        {
-            babaYaga = new BabaYaga();
-        }
+                Console.WriteLine($"Выберите 2-го бойца из списка");
 
-        private void CreateWaterMan(WaterMan waterMan) 
-        {
-            waterMan = new WaterMan();
+                ShowFighters();
+
+                inputUserCommand = Convert.ToInt32(Console.ReadLine());
+
+                if (_listOfFighters.ContainsKey(inputUserCommand))
+                {
+                    switch (inputUserCommand)
+                    {
+                        case 1:
+                            fighter2 = new Kashchei();
+                            break;
+                        case 2:
+                            fighter2 = new Dragon();
+                            break;
+                        case 3:
+                            fighter2 = new Goblin();
+                            break;
+                        case 4:
+                            fighter2 = new BabaYaga();
+                            break;
+                        case 5:
+                            fighter2 = new WaterMan();
+                            break;
+                    }
+
+                    isProgramWork = false;
+                }
+                else
+                {
+                    Console.WriteLine("Бойца под таким номером нет в списке");
+                }
+            }
         }
     }
 }

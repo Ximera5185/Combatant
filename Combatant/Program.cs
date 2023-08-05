@@ -8,20 +8,11 @@ namespace Combatant
 {
     internal class Program
     {
-        List<Fighter> listOneFighter = new List<Fighter>();
-        List<Fighter> ListTwoFighter = new List<Fighter>();
-
         static void Main(string [] args)
         {
-            Arena levelGenerator = new Arena();
+            Arena arena = new Arena();
 
-            Console.WriteLine("Выберите 1-го бойца");
-            
-            levelGenerator.StartMenu();
-
-            Console.WriteLine("Выберите 2-го бойца");
-
-            levelGenerator.StartMenu();
+            arena.StartArena();
         }
     }
 }
