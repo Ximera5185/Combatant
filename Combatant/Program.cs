@@ -13,7 +13,7 @@ namespace Combatant
 
         static void Main(string [] args)
         {
-            levelGenerator levelGenerator = new levelGenerator();
+            Arena levelGenerator = new Arena();
 
             Console.WriteLine("Выберите 1-го бойца");
             

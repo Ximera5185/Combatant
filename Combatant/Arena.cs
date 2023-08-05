@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Combatant
 {
-    internal class levelGenerator
+    internal class Arena
     {
        readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
         
 
-        public levelGenerator() 
+        public Arena() 
         {
             AddFightersList();
         }
