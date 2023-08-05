@@ -8,32 +8,20 @@ namespace Combatant
 {
     internal class Program
     {
+        List<Fighter> listOneFighter = new List<Fighter>();
+        List<Fighter> ListTwoFighter = new List<Fighter>();
+
         static void Main(string [] args)
         {
-            int inputOneNumber;
-            int inputTwoNumber;
-
             levelGenerator levelGenerator = new levelGenerator();
 
             Console.WriteLine("Выберите 1-го бойца");
-
-            levelGenerator.ShowFighters();
-
-            Console.WriteLine("Введите номер первого бойца");
             
-            inputOneNumber = Convert.ToInt32(Console.ReadLine());
-
-            Console.Clear();
+            levelGenerator.StartMenu();
 
             Console.WriteLine("Выберите 2-го бойца");
 
-            levelGenerator.ShowFighters();
-
-            Console.WriteLine("Введите номер второго бойца");
-
-            inputTwoNumber = Convert.ToInt32(Console.ReadLine());
-
-            Console.ReadKey();
+            levelGenerator.StartMenu();
         }
     }
 }

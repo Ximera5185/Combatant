@@ -10,6 +10,8 @@ namespace Combatant
     {
        readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
+        
+
         public levelGenerator() 
         {
             AddFightersList();
@@ -32,7 +34,7 @@ namespace Combatant
             _listOfFighters.Add(5, "Водяной // Супер сила : ");
         }
 
-        private void StartMenu() 
+        public void StartMenu() 
         {
             bool isProgramWork = true;
 
@@ -40,46 +42,62 @@ namespace Combatant
 
             while (isProgramWork)
             {
+                const string CaseCreateKashchei = "1";
+                const string CaseCreateDragon = "2";
+                const string CaseCreateGoblin = "3";
+                const string CaseCreateBabaYaga = "4";
+                const string CaseCreateWaterMan = "5";
+
+                Kashchei kashchei = null;
+                Dragon dragon = null;
+                Goblin goblin = null;
+                BabaYaga babaYaga = null;
+                WaterMan waterMan = null; 
+
+                Console.WriteLine($"Выберите  бойца из списка");
+                ShowFighters();
+                
+                inputUserCommand = Console.ReadLine();
+
                 switch (inputUserCommand)
                 {
-                    
+                    case CaseCreateKashchei: CreateKashchei(kashchei);
+                        break;
+                    case CaseCreateDragon: CreateDragon(dragon);
+                        break;
+                    case CaseCreateGoblin: CreateGoblin(goblin);
+                        break;
+                    case CaseCreateBabaYaga: CreateBabaYaga(babaYaga);
+                        break;
+                    case CaseCreateWaterMan: CreateWaterMan(waterMan);
+                        break;
                 }
             }
         }
 
-        private Kashchei CreateKashchei(Kashchei kashchei) 
+        private void CreateKashchei(Kashchei kashchei) 
         {
             kashchei = new Kashchei();
-
-            return kashchei;
         }
 
-        private Dragon CreateDragon(Dragon dragon)
+        private void CreateDragon(Dragon dragon)
         { 
             dragon = new Dragon();
-
-            return dragon;
         }
 
-        private Goblin CreateGoblin(Goblin goblin) 
+        private void CreateGoblin(Goblin goblin) 
         {
             goblin = new Goblin();
-
-            return goblin;
         }
 
-        private BabaYaga CreateBabaYaga(BabaYaga babaYaga) 
+        private void CreateBabaYaga(BabaYaga babaYaga) 
         {
             babaYaga = new BabaYaga();
-
-            return babaYaga;
         }
 
-        private WaterMan CreateWaterMan(WaterMan waterMan) 
+        private void CreateWaterMan(WaterMan waterMan) 
         {
             waterMan = new WaterMan();
-
-            return waterMan;
         }
     }
 }
