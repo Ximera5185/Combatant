@@ -16,7 +16,6 @@ namespace Combatant
         public Arena()
         {
             AddFightersList();
-
         }
 
         public void ShowFighters()
@@ -38,11 +37,17 @@ namespace Combatant
 
         public void StartArena()
         {
-            ChoiceOfTheFirstFighter();
-            ChoiceOfTheSecondFighter();
+
+            Console.WriteLine($"Выберите 1-го бойца из списка");
+
+            fighter1 = ChoiceOfTheFirstFighter(fighter1);
+
+            Console.WriteLine($"Выберите 2-го бойца из списка");
+
+            fighter2 = ChoiceOfTheFirstFighter(fighter2);
         }
 
-        private void ChoiceOfTheFirstFighter() 
+        private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
         {
             bool isProgramWork = true;
 
@@ -50,8 +55,6 @@ namespace Combatant
 
             while (isProgramWork)
             {
-
-                Console.WriteLine($"Выберите 1-го бойца из списка");
 
                 ShowFighters();
 
@@ -62,74 +65,35 @@ namespace Combatant
                     switch (inputUserCommand)
                     {
                         case 1:
-                            fighter1 = new Kashchei();
+                            fighter = new Kashchei();
                             break;
                         case 2:
-                            fighter1 = new Dragon();
+                            fighter = new Dragon();
                             break;
                         case 3:
-                            fighter1 = new Goblin();
+                            fighter = new Goblin();
                             break;
                         case 4:
-                            fighter1 = new BabaYaga();
+                            fighter = new BabaYaga();
                             break;
                         case 5:
-                            fighter1 = new WaterMan();
+                            fighter = new WaterMan();
                             break;
                     }
 
+
                     isProgramWork = false;
+                return fighter;
                 }
                 else
                 {
                     Console.WriteLine("Бойца под таким номером нет в списке");
+                    return null;
                 }
-            }
-        }
 
-        private void ChoiceOfTheSecondFighter() 
-        {
-            bool isProgramWork = true;
-
-            int inputUserCommand;
-
-            while (isProgramWork)
-            {
-
-                Console.WriteLine($"Выберите 2-го бойца из списка");
-
-                ShowFighters();
-
-                inputUserCommand = Convert.ToInt32(Console.ReadLine());
-
-                if (_listOfFighters.ContainsKey(inputUserCommand))
-                {
-                    switch (inputUserCommand)
-                    {
-                        case 1:
-                            fighter2 = new Kashchei();
-                            break;
-                        case 2:
-                            fighter2 = new Dragon();
-                            break;
-                        case 3:
-                            fighter2 = new Goblin();
-                            break;
-                        case 4:
-                            fighter2 = new BabaYaga();
-                            break;
-                        case 5:
-                            fighter2 = new WaterMan();
-                            break;
-                    }
-
-                    isProgramWork = false;
-                }
-                else
-                {
-                    Console.WriteLine("Бойца под таким номером нет в списке");
-                }
             }
         }
     }
 }
+
+
