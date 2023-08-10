@@ -8,16 +8,17 @@ namespace Combatant
 {
     internal class Arena
     {
-        readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
-
-        Fighter fighter1;
-        Fighter fighter2;
-
         private const int _PositionOneCase = 1;
         private const int _PositionTwoCase = 2;
         private const int _PositionThreeCase = 3;
         private const int _PositionFourCase = 4;
         private const int _PositionFiveCase = 5;
+
+        readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
+
+        Fighter fighter1;
+        Fighter fighter2;
+
 
         public Arena()
         {
