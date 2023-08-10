@@ -13,6 +13,12 @@ namespace Combatant
         Fighter fighter1;
         Fighter fighter2;
 
+        private const int _PositionOneCase = 1;
+        private const int _PositionTwoCase = 2;
+        private const int _PositionThreeCase = 3;
+        private const int _PositionFourCase = 4;
+        private const int _PositionFiveCase = 5;
+
         public Arena()
         {
             AddFightersList();
@@ -28,16 +34,16 @@ namespace Combatant
 
         private void AddFightersList()
         {
-            _listOfFighters.Add(1, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
-            _listOfFighters.Add(2, "Змей-Горыныч // Супер сила : ");
-            _listOfFighters.Add(3, "Леший // Супер сила : ");
-            _listOfFighters.Add(4, "Баба-Яга // Супер сила : ");
-            _listOfFighters.Add(5, "Водяной // Супер сила : ");
+            _listOfFighters.Add(_PositionOneCase, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
+            _listOfFighters.Add(_PositionTwoCase, "Змей-Горыныч // Супер сила : ");
+            _listOfFighters.Add(_PositionThreeCase, "Леший // Супер сила : ");
+            _listOfFighters.Add(_PositionFourCase, "Баба-Яга // Супер сила : ");
+            _listOfFighters.Add(_PositionFiveCase, "Водяной // Супер сила : ");
         }
 
         public void StartArena()
         {
- 
+
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
             fighter1 = ChoiceOfTheFirstFighter(fighter1);
@@ -63,19 +69,19 @@ namespace Combatant
 
                 switch (inputUserCommand)
                 {
-                    case 1:
+                    case _PositionOneCase:
                         fighter = new Kashchei();
                         break;
-                    case 2:
+                    case _PositionTwoCase:
                         fighter = new Dragon();
                         break;
-                    case 3:
+                    case _PositionThreeCase:
                         fighter = new Goblin();
                         break;
-                    case 4:
+                    case _PositionFourCase:
                         fighter = new BabaYaga();
                         break;
-                    case 5:
+                    case _PositionFiveCase:
                         fighter = new WaterMan();
                         break;
                 }
@@ -98,5 +104,3 @@ namespace Combatant
         }
     }
 }
-
-
