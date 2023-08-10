@@ -55,43 +55,44 @@ namespace Combatant
 
             while (isProgramWork)
             {
-
                 ShowFighters();
 
                 inputUserCommand = Convert.ToInt32(Console.ReadLine());
 
-                if (_listOfFighters.ContainsKey(inputUserCommand))
+
+                switch (inputUserCommand)
                 {
-                    switch (inputUserCommand)
-                    {
-                        case 1:
-                            fighter = new Kashchei();
-                            break;
-                        case 2:
-                            fighter = new Dragon();
-                            break;
-                        case 3:
-                            fighter = new Goblin();
-                            break;
-                        case 4:
-                            fighter = new BabaYaga();
-                            break;
-                        case 5:
-                            fighter = new WaterMan();
-                            break;
-                    }
-
-
-                    isProgramWork = false;
-                return fighter;
+                    case 1:
+                        fighter = new Kashchei();
+                        break;
+                    case 2:
+                        fighter = new Dragon();
+                        break;
+                    case 3:
+                        fighter = new Goblin();
+                        break;
+                    case 4:
+                        fighter = new BabaYaga();
+                        break;
+                    case 5:
+                        fighter = new WaterMan();
+                        break;
                 }
-                else
+
+                isProgramWork = false;
+
+                if (_listOfFighters.ContainsKey(inputUserCommand) == false)
                 {
                     Console.WriteLine("Бойца под таким номером нет в списке");
-                    return null;
+
+                    fighter = null;
+
+                    isProgramWork = true;
                 }
 
             }
+
+            return fighter;
         }
     }
 }
