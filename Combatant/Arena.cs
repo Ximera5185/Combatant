@@ -37,11 +37,12 @@ namespace Combatant
 
         public void StartArena()
         {
-
+ 
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
             fighter1 = ChoiceOfTheFirstFighter(fighter1);
 
+            Console.Clear();
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
             fighter2 = ChoiceOfTheFirstFighter(fighter2);
@@ -83,6 +84,7 @@ namespace Combatant
 
                 if (_listOfFighters.ContainsKey(inputUserCommand) == false)
                 {
+                    Console.Clear();
                     Console.WriteLine("Бойца под таким номером нет в списке");
 
                     fighter = null;
