@@ -27,6 +27,7 @@ namespace Combatant
         public Arena()
         {
             AddFightersList();
+            AddFightersArray();
         }
 
         public void ShowFighters()
@@ -39,11 +40,11 @@ namespace Combatant
 
         private void AddFightersArray() 
         {
-            fighters [1] = new Kashchei();
-            fighters [2] = new Dragon();
-            fighters [3] = new Goblin();
-            fighters [4] = new BabaYaga();
-            fighters [5] = new WaterMan();
+            fighters [0] = new Kashchei();
+            fighters [1] = new Dragon();
+            fighters [2] = new Goblin();
+            fighters [3] = new BabaYaga();
+            fighters [4] = new WaterMan();
         }
         private void AddFightersList()
         {
@@ -67,7 +68,7 @@ namespace Combatant
             fighter2 = ChoiceArray(fighter2,fighters);
         }
 
-        private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
+        /*private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
         {
             bool isProgramWork = true;
 
@@ -114,7 +115,7 @@ namespace Combatant
             }
 
             return fighter;
-        }
+        }*/
 
         private Fighter ChoiceArray(Fighter fighter, Fighter [] fighters) 
         {
@@ -125,6 +126,8 @@ namespace Combatant
                 if (inputUserNumber == i+1)
                 {
                     fighter = fighters[i];
+
+                    return fighter;
                 }
                 else
                 {
