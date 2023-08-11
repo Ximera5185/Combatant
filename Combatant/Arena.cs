@@ -16,6 +16,10 @@ namespace Combatant
 
         readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
+        Fighter [] fighters = new Fighter [5] ;
+
+        
+
         Fighter fighter1;
         Fighter fighter2;
 
@@ -33,6 +37,14 @@ namespace Combatant
             }
         }
 
+        private void AddFightersArray() 
+        {
+            fighters [1] = new Kashchei();
+            fighters [2] = new Dragon();
+            fighters [3] = new Goblin();
+            fighters [4] = new BabaYaga();
+            fighters [5] = new WaterMan();
+        }
         private void AddFightersList()
         {
             _listOfFighters.Add(_PositionOneCase, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
@@ -47,12 +59,12 @@ namespace Combatant
 
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
-            fighter1 = ChoiceOfTheFirstFighter(fighter1);
+            fighter1 = ChoiceArray(fighter1,fighters);
 
             Console.Clear();
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
-            fighter2 = ChoiceOfTheFirstFighter(fighter2);
+            fighter2 = ChoiceArray(fighter2,fighters);
         }
 
         private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
@@ -99,6 +111,25 @@ namespace Combatant
                     isProgramWork = true;
                 }
 
+            }
+
+            return fighter;
+        }
+
+        private Fighter ChoiceArray(Fighter fighter, Fighter [] fighters) 
+        {
+            int inputUserNumber = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < fighters.Length; i++)
+            {
+                if (inputUserNumber == i+1)
+                {
+                    fighter = fighters[i];
+                }
+                else
+                {
+                    fighter = null;
+                }
             }
 
             return fighter;
