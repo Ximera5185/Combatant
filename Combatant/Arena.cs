@@ -66,6 +66,17 @@ namespace Combatant
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
             fighter2 = ChoiceArray(fighter2,fighters);
+
+            if (object.ReferenceEquals(fighter1, fighter2))
+            {
+                Console.WriteLine("Объекты имеют одну и ту же ссылку");
+            }
+            else
+            {
+                Console.WriteLine("Объекты имеют разные ссылки");
+            }
+
+            Console.ReadKey();
         }
 
         /*private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
