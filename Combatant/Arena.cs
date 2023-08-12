@@ -16,18 +16,14 @@ namespace Combatant
 
         readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
-        Fighter [] fighters = new Fighter [5] ;
-
-        
+        Fighter [] fighters = new Fighter [5] { new Kashchei(), new Dragon(), new Goblin(), new BabaYaga(), new WaterMan()} ;
 
         Fighter fighter1;
         Fighter fighter2;
 
-
         public Arena()
         {
             AddFightersList();
-            AddFightersArray();
         }
 
         public void ShowFighters()
@@ -38,105 +34,44 @@ namespace Combatant
             }
         }
 
-        private void AddFightersArray() 
-        {
-            fighters [0] = new Kashchei();
-            fighters [1] = new Dragon();
-            fighters [2] = new Goblin();
-            fighters [3] = new BabaYaga();
-            fighters [4] = new WaterMan();
-        }
-        private void AddFightersList()
+       /* private void AddFightersList()
         {
             _listOfFighters.Add(_PositionOneCase, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
             _listOfFighters.Add(_PositionTwoCase, "Змей-Горыныч // Супер сила : ");
             _listOfFighters.Add(_PositionThreeCase, "Леший // Супер сила : ");
             _listOfFighters.Add(_PositionFourCase, "Баба-Яга // Супер сила : ");
             _listOfFighters.Add(_PositionFiveCase, "Водяной // Супер сила : ");
-        }
+        }*/
 
         public void StartArena()
         {
-
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
-            fighter1 = ChoiceArray(fighter1,fighters);
+            fighter1 = ChoiceArray(fighter1);
 
             Console.Clear();
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
-            fighter2 = ChoiceArray(fighter2,fighters);
+            fighter2 = ChoiceArray(fighter2);
 
-            if (object.ReferenceEquals(fighter1, fighter2))
-            {
-                Console.WriteLine("Объекты имеют одну и ту же ссылку");
-            }
-            else
-            {
-                Console.WriteLine("Объекты имеют разные ссылки");
-            }
-
+          
             Console.ReadKey();
         }
 
-        /*private Fighter ChoiceOfTheFirstFighter(Fighter fighter)
-        {
-            bool isProgramWork = true;
 
-            int inputUserCommand;
-
-            while (isProgramWork)
-            {
-                ShowFighters();
-
-                inputUserCommand = Convert.ToInt32(Console.ReadLine());
-
-
-                switch (inputUserCommand)
-                {
-                    case _PositionOneCase:
-                        fighter = new Kashchei();
-                        break;
-                    case _PositionTwoCase:
-                        fighter = new Dragon();
-                        break;
-                    case _PositionThreeCase:
-                        fighter = new Goblin();
-                        break;
-                    case _PositionFourCase:
-                        fighter = new BabaYaga();
-                        break;
-                    case _PositionFiveCase:
-                        fighter = new WaterMan();
-                        break;
-                }
-
-                isProgramWork = false;
-
-                if (_listOfFighters.ContainsKey(inputUserCommand) == false)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Бойца под таким номером нет в списке");
-
-                    fighter = null;
-
-                    isProgramWork = true;
-                }
-
-            }
-
-            return fighter;
-        }*/
-
-        private Fighter ChoiceArray(Fighter fighter, Fighter [] fighters) 
+        private Fighter ChoiceArray() 
         {
             int inputUserNumber = Convert.ToInt32(Console.ReadLine());
+
+            Fighter fighter = null;
 
             for (int i = 0; i < fighters.Length; i++)
             {
                 if (inputUserNumber == i+1)
                 {
-                    fighter = fighters[i];
+                // реализация вывода инфы о бойце
+                    Console.WriteLine($"{fighters[i].??}");
+                    fighter = fighters[i].CreateFighter();
 
                     return fighter;
                 }

@@ -8,6 +8,9 @@ namespace Combatant
 {
     internal class Dragon : Fighter
     {
-        
+        public override Fighter CreateFighter()
+        {
+            return new Dragon();
+        }
     }
 }

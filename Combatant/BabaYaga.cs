@@ -8,6 +8,9 @@ namespace Combatant
 {
     internal class BabaYaga : Fighter
     {
-        
+        public override Fighter CreateFighter()
+        {
+            return new BabaYaga();
+        }
     }
 }

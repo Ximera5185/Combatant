@@ -8,6 +8,14 @@ namespace Combatant
 {
     internal class Kashchei : Fighter
     {
-        
+
+        public Kashchei()
+        {
+            // поле описание
+        }
+        public override Fighter CreateFighter()
+        {
+            return new Kashchei();
+        }
     }
 }

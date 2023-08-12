@@ -8,6 +8,9 @@ namespace Combatant
 {
     internal class Goblin : Fighter 
     {
-        
+        public override Fighter CreateFighter()
+        {
+            return new Goblin();
+        }
     }
 }
