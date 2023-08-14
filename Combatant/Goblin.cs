@@ -8,6 +8,10 @@ namespace Combatant
 {
     internal class Goblin : Fighter 
     {
+        public Goblin()
+        {
+            ShowInfo = "Леший // Супер сила : ";
+        }
         public override Fighter CreateFighter()
         {
             return new Goblin();

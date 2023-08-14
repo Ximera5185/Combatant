@@ -8,6 +8,10 @@ namespace Combatant
 {
     internal class BabaYaga : Fighter
     {
+        public BabaYaga()
+        {
+            ShowInfo = "Баба-Яга // Супер сила : ";
+        }
         public override Fighter CreateFighter()
         {
             return new BabaYaga();

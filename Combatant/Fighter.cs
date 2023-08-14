@@ -12,10 +12,14 @@ namespace Combatant
         public string Name { get; private set; }
         public int Healt { get; private set; }  
         public string Damage { get; private set; }
+
+        public string ShowInfo { get; protected set; }
         public virtual Fighter CreateFighter()
         {
             return new Fighter();
         }
+
+        
     }
 
 }

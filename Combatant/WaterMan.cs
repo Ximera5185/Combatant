@@ -8,9 +8,16 @@ namespace Combatant
 {
     internal class WaterMan : Fighter
     {
+
+        
+        public WaterMan()
+        {
+            ShowInfo = "Водяной // Супер сила :";
+        }
         public override Fighter CreateFighter()
         {
             return new WaterMan();
         }
+
     }
 }

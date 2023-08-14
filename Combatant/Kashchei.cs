@@ -8,10 +8,9 @@ namespace Combatant
 {
     internal class Kashchei : Fighter
     {
-
         public Kashchei()
         {
-            // поле описание
+           ShowInfo = "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона";
         }
         public override Fighter CreateFighter()
         {

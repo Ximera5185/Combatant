@@ -23,7 +23,7 @@ namespace Combatant
 
         public Arena()
         {
-            AddFightersList();
+            
         }
 
         public void ShowFighters()
@@ -47,12 +47,12 @@ namespace Combatant
         {
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
-            fighter1 = ChoiceArray(fighter1);
+            fighter1 = ChoiceArray();
 
             Console.Clear();
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
-            fighter2 = ChoiceArray(fighter2);
+            fighter2 = ChoiceArray();
 
           
             Console.ReadKey();
@@ -61,6 +61,8 @@ namespace Combatant
 
         private Fighter ChoiceArray() 
         {
+            ShowInfo();    
+
             int inputUserNumber = Convert.ToInt32(Console.ReadLine());
 
             Fighter fighter = null;
@@ -70,7 +72,8 @@ namespace Combatant
                 if (inputUserNumber == i+1)
                 {
                 // реализация вывода инфы о бойце
-                    Console.WriteLine($"{fighters[i].??}");
+                    Console.WriteLine($"{fighters[i].ShowInfo}");
+                    
                     fighter = fighters[i].CreateFighter();
 
                     return fighter;
@@ -83,5 +86,15 @@ namespace Combatant
 
             return fighter;
         }
+
+        private void ShowInfo() 
+        {
+            for (int i = 0; i < fighters.Length; i++)
+            {
+                Console.WriteLine($"{fighters [i].ShowInfo}");
+            }
+        }
     }
+
+    
 }
