@@ -34,32 +34,28 @@ namespace Combatant
             }
         }
 
-       /* private void AddFightersList()
+        public void CombatLaunch() 
         {
-            _listOfFighters.Add(_PositionOneCase, "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона ");
-            _listOfFighters.Add(_PositionTwoCase, "Змей-Горыныч // Супер сила : ");
-            _listOfFighters.Add(_PositionThreeCase, "Леший // Супер сила : ");
-            _listOfFighters.Add(_PositionFourCase, "Баба-Яга // Супер сила : ");
-            _listOfFighters.Add(_PositionFiveCase, "Водяной // Супер сила : ");
-        }*/
-
+            Console.Clear();
+            Console.WriteLine("Запуск боя\n" +
+            $"Боец 1 {fighter1.ShowInfo}\n" +
+            $"Боец 2 {fighter2.ShowInfo}");
+            Console.ReadKey();
+        }
         public void StartArena()
         {
             Console.WriteLine($"Выберите 1-го бойца из списка");
 
-            fighter1 = ChoiceArray();
+            fighter1 = ChoiceFighters();
 
             Console.Clear();
             Console.WriteLine($"Выберите 2-го бойца из списка");
 
-            fighter2 = ChoiceArray();
-
-          
-            Console.ReadKey();
+            fighter2 = ChoiceFighters();
         }
 
 
-        private Fighter ChoiceArray() 
+        private Fighter ChoiceFighters() 
         {
             ShowInfo();    
 
@@ -70,10 +66,7 @@ namespace Combatant
             for (int i = 0; i < fighters.Length; i++)
             {
                 if (inputUserNumber == i+1)
-                {
-                // реализация вывода инфы о бойце
-                    Console.WriteLine($"{fighters[i].ShowInfo}");
-                    
+                {   
                     fighter = fighters[i].CreateFighter();
 
                     return fighter;
@@ -95,6 +88,4 @@ namespace Combatant
             }
         }
     }
-
-    
 }

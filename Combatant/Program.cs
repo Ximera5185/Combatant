@@ -13,6 +13,8 @@ namespace Combatant
             Arena arena = new Arena();
 
             arena.StartArena();
+
+            arena.CombatLaunch();
         }
     }
 }
