@@ -13,6 +13,12 @@ namespace Combatant
         public WaterMan()
         {
             ShowInfo = "Водяной // Супер сила :";
+
+            Name = "Водяной";
+
+            Healt = 100;
+
+            Damage = 10;
         }
         public override Fighter CreateFighter()
         {

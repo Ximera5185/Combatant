@@ -11,6 +11,12 @@ namespace Combatant
         public Dragon()
         {
             ShowInfo = "Змей-Горыныч // Супер сила : ";
+
+            Name = "Змей - Горыныч";
+
+            Healt = 100;
+
+            Damage = 20;
         }
         public override Fighter CreateFighter()
         {

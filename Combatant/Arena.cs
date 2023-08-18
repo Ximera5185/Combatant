@@ -34,7 +34,7 @@ namespace Combatant
             }
         }
 
-        public void CombatLaunch() 
+        public void LaunchCombat() 
         {
             Console.Clear();
             Console.WriteLine("Запуск боя\n" +

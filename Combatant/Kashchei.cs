@@ -11,6 +11,12 @@ namespace Combatant
         public Kashchei()
         {
            ShowInfo = "Кащей // Супер сила : Восстанавливается здоровье на 10% при получении урона";
+
+            Name = "Кащей";
+
+            Healt = 100;
+
+            Damage = 20;
         }
         public override Fighter CreateFighter()
         {

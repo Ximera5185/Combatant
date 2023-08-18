@@ -9,9 +9,9 @@ namespace Combatant
 {
     internal class Fighter
     {
-        public string Name { get; private set; }
-        public int Healt { get; private set; }  
-        public string Damage { get; private set; }
+        public string Name { get; protected set; }
+        public int Healt { get; protected set; }  
+        public int Damage { get; protected set; }
 
         public string ShowInfo { get; protected set; }
         public virtual Fighter CreateFighter()

@@ -14,7 +14,7 @@ namespace Combatant
 
             arena.StartArena();
 
-            arena.CombatLaunch();
+            arena.LaunchCombat();
         }
     }
 }

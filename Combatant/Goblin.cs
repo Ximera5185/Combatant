@@ -11,6 +11,12 @@ namespace Combatant
         public Goblin()
         {
             ShowInfo = "Леший // Супер сила : ";
+
+            Name = "Леший";
+
+            Healt = 100;
+
+            Damage = 15;
         }
         public override Fighter CreateFighter()
         {

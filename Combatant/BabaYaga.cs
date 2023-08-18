@@ -11,6 +11,12 @@ namespace Combatant
         public BabaYaga()
         {
             ShowInfo = "Баба-Яга // Супер сила : ";
+
+            Name = "Баба - Яга";
+
+            Healt = 100;
+
+            Damage = 15;
         }
         public override Fighter CreateFighter()
         {
