@@ -16,14 +16,14 @@ namespace Combatant
 
         readonly Dictionary<int, string> _listOfFighters = new Dictionary<int, string>();
 
-        Fighter [] fighters = new Fighter [5] { new Kashchei(), new Dragon(), new Goblin(), new BabaYaga(), new WaterMan()} ;
+        Fighter [] fighters = new Fighter [5] { new Kashchei(), new Dragon(), new Goblin(), new BabaYaga(), new WaterMan() };
 
         Fighter fighter1;
         Fighter fighter2;
 
         public Arena()
         {
-            
+
         }
 
         public void ShowFighters()
@@ -34,8 +34,10 @@ namespace Combatant
             }
         }
 
-        public void LaunchCombat() 
+        public void LaunchCombat()
         {
+            Fighter winner;
+
             int healtFighter1 = fighter1.Healt;
             int healtFighter2 = fighter2.Healt;
             int damageFighter1 = fighter1.Damage;
@@ -52,16 +54,26 @@ namespace Combatant
                 Console.WriteLine("Для старта раунда Нажмите клавишу пробел:");
                 while (Console.ReadKey().Key != ConsoleKey.Spacebar)
                 {
-                
+
                 }
 
 
                 healtFighter2 -= damageFighter1;
                 healtFighter1 -= damageFighter2;
 
-                Console.WriteLine($" Игроки обменялись ударами\n") ;
+                Console.WriteLine($" Игроки обменялись ударами\n");
             }
 
+            if (healtFighter1 > 0)
+            {
+                winner = fighter1;
+                Console.WriteLine($"Победитель {winner.Name}");
+            }
+            else
+            {
+                winner = fighter2;
+                Console.WriteLine($"Победитель {winner.Name}");
+            }
 
             Console.ReadKey();
         }
@@ -78,9 +90,9 @@ namespace Combatant
         }
 
 
-        private Fighter ChoiceFighters() 
+        private Fighter ChoiceFighters()
         {
-            ShowInfo();    
+            ShowInfo();
 
             int inputUserNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -88,9 +100,9 @@ namespace Combatant
 
             for (int i = 0; i < fighters.Length; i++)
             {
-                if (inputUserNumber == i+1)
-                {   
-                    fighter = fighters[i].CreateFighter();
+                if (inputUserNumber == i + 1)
+                {
+                    fighter = fighters [i].CreateFighter();
 
                     return fighter;
                 }
@@ -103,7 +115,7 @@ namespace Combatant
             return fighter;
         }
 
-        private void ShowInfo() 
+        private void ShowInfo()
         {
             for (int i = 0; i < fighters.Length; i++)
             {
