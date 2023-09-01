@@ -36,10 +36,33 @@ namespace Combatant
 
         public void LaunchCombat() 
         {
-            Console.Clear();
-            Console.WriteLine("Запуск боя\n" +
-            $"Боец 1 {fighter1.ShowInfo}\n" +
-            $"Боец 2 {fighter2.ShowInfo}");
+            int healtFighter1 = fighter1.Healt;
+            int healtFighter2 = fighter2.Healt;
+            int damageFighter1 = fighter1.Damage;
+            int damageFighter2 = fighter2.Damage;
+
+            while (healtFighter1 > 0 && healtFighter2 > 0)
+            {
+
+                Console.Clear();
+                Console.WriteLine("<Бой\n" +
+                $"Боец 1 {fighter1.Name} Здоровье {healtFighter1}%\n" +
+                $"Боец 2 {fighter2.Name} Здоровье {healtFighter2}%");
+
+                Console.WriteLine("Для старта раунда Нажмите клавишу пробел:");
+                while (Console.ReadKey().Key != ConsoleKey.Spacebar)
+                {
+                
+                }
+
+
+                healtFighter2 -= damageFighter1;
+                healtFighter1 -= damageFighter2;
+
+                Console.WriteLine($" Игроки обменялись ударами\n") ;
+            }
+
+
             Console.ReadKey();
         }
         public void StartArena()
