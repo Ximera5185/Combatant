@@ -19,7 +19,14 @@ namespace Combatant
             return new Fighter();
         }
 
-        
+        public void GetDamage(Fighter fighterDamage)
+        {
+            Healt -= fighterDamage.Damage;
+        }
+        public void Attack(Fighter fighter,Fighter fighterDamage)
+        {
+            fighter.GetDamage(fighterDamage);
+        }
     }
 
 }
