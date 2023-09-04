@@ -19,13 +19,13 @@ namespace Combatant
             return new Fighter();
         }
 
-        public void GetDamage(Fighter fighterDamage)
+        public void GetDamage(int damage)
         {
-            Healt -= fighterDamage.Damage;
+            Healt -= damage;
         }
-        public void Attack(Fighter fighter,Fighter fighterDamage)
+        public void Attack(Fighter enemy)
         {
-            fighter.GetDamage(fighterDamage);
+            enemy.GetDamage(Damage);
         }
     }
 
